@@ -1,0 +1,296 @@
+/*==============================
+=            Footer            =
+==============================*/
+$footer-grid: (
+    columns: 1,
+    gutter: 5rem
+);
+
+.footer {
+    $base-spacing: 2em !default;
+    $action-color: #477DCA !default;
+    $medium-screen: 40em !default;
+    $large-screen: 53.75em !default;
+    $footer-background: $primary;
+    $footer-color: white;
+    $footer-link-color: transparentize($footer-color, 0.6);
+    $footer-disclaimer-color: transparentize($footer-color, 0.6);
+
+    $footer-height-block: 50px;
+
+    background: $footer-background;
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    position: fixed;
+    bottom: 0;
+    z-index: 0;
+
+    // @include media($XSmall) {
+    //     padding-bottom: 60px;
+    // }
+
+    // @include media($Small) {
+    //     padding-bottom: 60px;
+    // }
+
+    &-container {
+        @include grid-column(1, $footer-grid);
+        min-height: calc(300px - 2rem);
+        padding: 1rem 0;
+
+        // @include media($XXLarge) {
+        //     @include outer-container(1600px);
+        //     padding: modular-scale(3) 0;
+        // }
+
+        // @include media($XLarge) {
+        //     padding: ($font-size-large + 0.2) 0;
+        // }
+
+        // @include media($Medium) {
+        //     padding: 1rem;
+        // }
+
+        // @include media($Small) {
+        //     padding: 1rem;
+        // }
+
+        &__top-block {
+            height: calc(250px - 2rem);
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 0;
+
+            .top-block {
+
+
+                &__projects {
+                    width: 100%;
+                    height: calc(220px - 2rem);
+
+                    img {
+                        width: auto;
+                        height: 3em;
+                    }
+
+                    // @include media($XXLarge) {
+                    //     padding: modular-scale(3) 0;
+                    // }
+
+                    // @include media($XLarge) {
+                    //     padding: ($font-size-large + 0.2) 0;
+                    // }
+
+                    // @include media($Medium) {
+                    //     text-align: center;
+                    // }
+
+                    // @include media($XSmall) {
+                    //     img {
+                    //         width: 100%;
+                    //         height: auto;
+                    //     }
+                    // }
+
+                    // @include media($Small) {
+                    //     width: 100%;
+                    //     margin: 0;
+
+                    //     img {
+                    //         width: auto;
+                    //         height: 3em;
+                    //         margin: 0 auto;
+                    //         display: block;
+                    //     }
+                    // }
+                }
+
+                &__links {
+                    width: 100%;
+                    height: 30px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    .links {
+
+                        &__nav {
+                            width: 70%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+
+                            ul {
+                                display: flex;
+                                flex-direction: row;
+
+                                li {
+                                    margin-right: 2rem;
+
+                                    a {
+                                        color: $third;
+
+                                        &.active,
+                                        &:hover {
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &__social {
+                            width: 30%;
+                            display: flex;
+                            flex-direction: row-reverse;
+                            align-items: center;
+
+                            .social {
+
+                                &__name {
+                                    width: 1.5rem;
+                                    height: 1.5rem;
+                                    margin-left: 1rem;
+                                    display: inline-block;
+
+                                    svg {
+                                        fill: $third;
+                                        transition: 0.2s;
+
+                                        &:hover {
+                                            fill: #fff;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .soc-facebook:before {
+                                content:'\e041';
+                            }
+
+                            .soc-vkontakte:before {
+                                content:'\e01a';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__down-block {
+            width: 100%;
+            height: calc(50px - 2rem);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            min-height: 50px;
+            padding: 1rem 0;
+            border-top: 1px solid #fff;
+
+            .copyright {
+                width: 70%;
+                display: flex;
+                align-items: center;
+                font-size: $font-size-small;
+                color: $third;
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            .author {
+                width: 30%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+
+                p {
+                    font: {
+                        //family: $font-family-base;
+                        size: $font-size-small;
+                    };
+                    line-height: 1.4;
+                    color: $third;
+                    display: inline-block;
+                    position: relative;
+                    text-align: right;
+                }
+
+                a {
+                    margin-left: 1rem;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+
+
+                    svg {
+                        width: auto;
+                        height: 2rem;
+                        display: block;
+                        stroke-width: 0;
+                        transition: all 0.2s;
+
+                        .redvus-logo__red {
+                            fill: #fff;
+                            transition: 0.2s;
+                        }
+
+                        .redvus-logo__deepred {
+                            fill: #fff;
+                        }
+
+                        &:hover {
+
+
+                            .redvus-logo__red {
+                                fill: $third;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // @include media($Medium) {
+            //     text-align: center;
+
+            //     .copyright {
+            //         width: 50%;
+            //         text-align: left;
+            //     }
+
+            //     .author {
+            //         width: 50%;
+            //     }
+            // }
+
+            // @include media($Small) {
+            //     width: 100%;
+            //     flex-direction: column;
+            //     margin: 1rem 0 0;
+            //     text-align: center;
+
+            //     .copyright {
+            //         width: 100%;
+            //         text-align: center;
+            //     }
+
+            //     .author {
+            //         width: 100%;
+            //         justify-content: center;
+            //         align-items: center;
+            //         text-align: center;
+            //         margin-top: 1rem;
+
+            //         p {
+            //             text-align: right;
+            //         }
+            //     }
+            // }
+        }
+    }
+}
+
+/*=====  End of Footer  ======*/
