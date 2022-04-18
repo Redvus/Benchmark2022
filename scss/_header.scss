@@ -1,0 +1,87 @@
+/*=============================================
+=                   Header                   =
+=============================================*/
+
+.header {
+	width: 100%;
+	height: $headerHeight;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $fourth;
+	z-index: 9990;
+
+	&__wrapper {
+		width: $wrapperWidth;
+		height: 100%;
+		display: block;
+		position: relative;
+		margin: 0 auto;
+	}
+
+	&-top {
+		width: 100%;
+		height: $headerTopHeight;
+		display: block;
+		position: relative;
+		float: left;
+		background-color: $fourth;
+	}
+
+	&-bottom {
+		width: 100%;
+		height: $headerBottomHeight;
+		display: block;
+		position: relative;
+		float: left;
+		background-color: $primary;
+	}
+
+	&-line {
+		width: 100%;
+		height: $headerLineHeight / 4;
+		display: block;
+		position: fixed;
+		background-color: $third;
+		top: calc(#{$headerTopHeight} + #{$headerBottomHeight} + (#{$headerLineHeight} *3/4));
+		left: 0;
+		z-index: 9995;
+	}
+
+	&__logo {
+		min-width: $padding * 5;
+		height: $padding * 3;
+		display: block;
+		position: relative;
+		float: left;
+		background-color: $fourth;
+		left: 0;
+		top: 0;
+		padding: 0 $padding;
+
+		svg {
+			width: auto;
+			height: $padding * 3;
+			display: block;
+		}
+
+		&--red {
+			fill: $primary;
+		}
+
+		&--black {
+			fill: $secondary;
+		}
+	}
+
+	&__menu {
+		width: calc(100% - (#{$padding} * 12));
+		height: $padding * 3;
+		display: block;
+		position: relative;
+		float: left;
+	}
+}
+
+/*============  End of Header  =============*/

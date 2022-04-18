@@ -1,0 +1,47 @@
+/*=========================================
+=                   Nav                   =
+=========================================*/
+
+.nav-main {
+	width: 80%;
+	height: $headerBottomHeight;
+	display: flex;
+	flex-direction: row-reverse;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	&__menu {
+		// width: 100%;
+		height: $headerBottomHeight;
+		display: flex;
+		flex-direction: row;
+
+		li {
+			height: 100%;
+			padding: 0 $padding;
+
+			a {
+				width: 100%;
+				height: $headerBottomHeight;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $fourth;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			&:hover {
+
+				a {
+					color: $third;
+				}
+			}
+		}
+	}
+}
+
+/*============  End of Nav  =============*/
