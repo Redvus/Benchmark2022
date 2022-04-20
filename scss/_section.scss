@@ -3,21 +3,64 @@
 =============================================*/
 
 .section {
+	display: block;
+	position: relative;
+
+	&-wrapper {
+		width: $wrapperWidth;
+		margin: 0 auto;
+	}
+
+	&__title {
+		display: inline-block;
+		margin-bottom: $padding * 3;
+
+		h2 {
+			font-size: $font-size-h1;
+			color: $primary;
+		}
+
+		a {
+
+			&:hover {
+
+				h2 {
+					color: $third;
+				}
+			}
+		}
+	}
 
 	&-slider {
 		width: 100%;
 		height: calc(100vh - #{$headerHeight});
-		display: block;
-		position: relative;
 		top: 0;
 		left: 0;
+		overflow: hidden;
+		z-index: 1;
+
+		&__symbol {
+			width: 40%;
+			height: auto;
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 40%;
+			transform: translateY(-50%);
+			z-index: 10;
+
+			svg {
+				width: 100%;
+				height: auto;
+				display: block;
+				fill: rgba($primary, 0.4);
+			}
+		}
 	}
 
 	&-top {
 		width: 100%;
 		height: $sectionTopHeight;
-		display: block;
-		position: relative;
 		top: 0;
 		left: 0;
 		margin-bottom: $padding * 3;
@@ -26,16 +69,31 @@
 			width: 100%;
 			height: 100%;
 			display: block;
+			position: relative;
 			overflow: hidden;
+			z-index: 1;
 
 			img {
 				width: 100%;
-				height: 100%;
+				height: 130%;
 				display: block;
+				position: absolute;
+				top: -15%;
 				object-position: center;
 				object-fit: cover;
 			}
 
+		}
+
+		&__mask {
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba($primary, 0.2);
+			z-index: 2;
 		}
 
 		&__title {
@@ -47,6 +105,236 @@
 			bottom: 0;
 			background-color: $five;
 			transform: translate(-50%, 0);
+			z-index: 3;
+		}
+	}
+
+	&-services {
+		width: $wrapperWidth;
+		min-height: 50vh;
+		top: -($padding * 6);
+		margin: 0 auto;
+		// background-color: $five;
+		z-index: 2;
+
+		&__list {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			// top: -13vh;
+			position: relative;
+
+			a {
+
+				p {
+					color: $secondary;
+				}
+
+				&:hover {
+
+					li {
+						background-color: lighten($primary, 60%);
+					}
+				}
+			}
+
+			li {
+				width: calc(#{$sectionServicesLiWidth} - #{$border_thin});
+				height: $sectionServicesLiHeight;
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				background-color: $fourth;
+				border-right: $border_thin solid $five;
+				border-bottom: $border_thin solid $five;
+				// padding: 0 $padding;
+				transition: $base-duration;
+
+				&:nth-child(3),
+				&:nth-child(6) {
+					width: $sectionServicesLiWidth;
+					border-right: none;
+				}
+
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(6) {
+					border-bottom: none;
+				}
+			}
+
+			&-title {
+				width: calc(100% - (#{$padding} * 2) - #{$border_bold});
+				height: calc((#{$padding} * 6));
+				display: flex;
+				align-items: center;
+				position: relative;
+				border-left: $border_bold solid $primary;
+				padding-left: $padding;
+				padding-right: $padding;
+
+				a {
+
+					&:hover {
+
+						h3 {
+							color: $third;
+						}
+					}
+				}
+			}
+
+			&-description {
+				width: calc(100% - ((#{$padding} + #{$border_bold}) * 2));
+				height: calc(#{$padding} * 6);
+				display: block;
+				position: relative;
+				padding: 0 ($padding + $border_bold);
+			}
+
+			&-image {
+				width: calc(100% - ((#{$padding} + #{$border_bold}) * 2));
+				height: calc(#{$sectionServicesLiHeight} - (#{$padding} * 12) - (#{$padding} + #{$border_bold}) - #{$padding});
+				display: block;
+				position: relative;
+				padding: $padding ($padding + $border_bold) ($padding + $border_bold) ($padding + $border_bold);
+
+				img {
+					width: auto;
+					height: 100%;
+					display: block;
+					background-color: $secondary;
+				}
+			}
+		}
+	}
+
+	&-news {
+		width: $wrapperWidth;
+		min-height: 70vh;
+		margin: 0 auto;
+		// background-color: $five;
+		z-index: 2;
+
+		&__list {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			position: relative;
+
+			li {
+				width: calc(#{$sectionNewsLiWidth} - #{$padding});
+				height: $wrapperWidth / 6;
+				display: flex;
+				flex-direction: row;
+				position: relative;
+				margin-right: $padding;
+				margin-bottom: $padding;
+				background-color: $fourth;
+
+				&:nth-child(2n) {
+					width: $sectionNewsLiWidth;
+					margin-right: 0;
+				}
+			}
+
+			&-text {
+				width: calc(100% - (#{$wrapperWidth} / 6) - (#{$padding} * 2));
+				height: $wrapperWidth / 6;
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				padding: 0 $padding;
+			}
+
+			&-image {
+				width: $wrapperWidth / 6;
+				height: $wrapperWidth / 6;
+				display: block;
+				position: relative;
+				top: 0;
+				left: 0;
+				background-color: $secondary;
+
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					object-fit: cover;
+					object-position: center;
+				}
+			}
+
+			&-date {
+				width: 100%;
+				height: calc((#{$wrapperWidth} / 6) / 3.5);
+				display: flex;
+				position: relative;
+				align-items: center;
+				justify-content: flex-start;
+				text-align-last: left;
+
+				span {
+					font-family: $heading-font-light;
+					font-size: $font-size-h1;
+					color: $primary;
+				}
+			}
+
+			&-title {
+				width: 100%;
+				height: calc((#{$wrapperWidth} / 6) / 5);
+				display: flex;
+				position: relative;
+				align-items: center;
+				justify-content: flex-start;
+				text-align-last: left;
+				top: 0;
+			}
+
+			&-description {
+				width: 100%;
+				height: calc((#{$wrapperWidth} / 6) / 1.5);
+				display: block;
+				position: relative;
+			}
+		}
+	}
+
+	&-partners {
+		width: 100%;
+		min-height: 50vh;
+		margin: 0 auto;
+		padding: ($padding * 2) 0;
+		background-color: $fourth;
+		z-index: 2;
+
+		&__list {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			li {
+				width: calc((#{$wrapperWidth} / 6) - #{$padding});
+				height: $wrapperWidth / 12;
+				display: block;
+				position: relative;
+				margin-right: $padding;
+				margin-bottom: $padding;
+
+				&:nth-child(6n) {
+					width: calc((#{$wrapperWidth} / 6));
+					margin-right: 0;
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					background-color: $secondary;
+				}
+			}
 		}
 	}
 }
