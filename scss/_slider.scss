@@ -137,9 +137,9 @@
 			// }
 		}
 
-		@include grid-media($Small) {
-			margin-left: -(($padding * 3) + $border_thin);
-		}
+		// @include grid-media($Small) {
+		// 	margin-left: -(($padding * 3) + $border_thin);
+		// }
 	}
 
 	.ms-nav-next {

@@ -19,7 +19,7 @@
                 space: 0,
                 loop: true,
                 view:'basic',
-                layout:'autofill',
+                layout:'fullscreen',
                 fullwidth: true,
                 preload: 0,
                 speed:20,
@@ -35,7 +35,7 @@
                 space: 0,
                 loop: true,
                 view:'parallaxMask',
-                layout:'autofill',
+                layout:'fullscreen',
                 fullwidth: true,
                 preload: 0,
                 speed:20,
@@ -50,7 +50,7 @@
                 space: 0,
                 loop: true,
                 view:'parallaxMask',
-                layout:'autofill',
+                layout:'fullscreen',
                 fullwidth: true,
                 preload: 0,
                 speed:20,
@@ -66,7 +66,7 @@
     }
 
     function initPageMobile() {
-
+        sliderIntroMaster();
     }
 
     if (document.body.clientWidth > 768 || screen.width > 768) {
