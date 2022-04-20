@@ -34,9 +34,40 @@ $footer-grid: (
     //     padding-bottom: 60px;
     // }
 
+    &__top {
+        width: 100%;
+        height: $padding * 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $third;
+
+        span {
+            font-family: $heading-font;
+            font-size: $font-size-h2;
+            color: $fourth;
+
+            a {
+                color: $fourth;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        width: $wrapperWidth;
+        height: 100%;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+    }
+
     &-container {
         @include grid-column(1, $footer-grid);
-        min-height: calc(300px - 2rem);
+        // min-height: calc(300px - 2rem);
         padding: 1rem 0;
 
         // @include media($XXLarge) {

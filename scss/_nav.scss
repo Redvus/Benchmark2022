@@ -3,7 +3,7 @@
 =========================================*/
 
 .nav-main {
-	width: 80%;
+	width: 100%;
 	height: $headerBottomHeight;
 	display: flex;
 	flex-direction: row-reverse;
@@ -27,14 +27,31 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				font-family: $heading-font-light;
+				font-size: $font-size-large;
 				color: $fourth;
 			}
 
-			&:last-child {
-				padding-right: 0;
+			// &:last-child {
+			// 	padding-right: 0;
+			// }
+
+			&.active {
+				background-color: darken($primary, 7%);
+
+				// a {
+				// 	color: $fourth;
+				// }
 			}
 
 			&:hover {
+
+				&.active {
+
+					a {
+						color: $fourth;
+					}
+				}
 
 				a {
 					color: $third;

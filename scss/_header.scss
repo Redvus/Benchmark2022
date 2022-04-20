@@ -27,6 +27,36 @@
 		position: relative;
 		float: left;
 		background-color: $fourth;
+		overflow: hidden;
+
+		&__adress {
+			width: calc(100% - #{$padding});
+			height: 100%;
+			display: flex;
+			position: relative;
+			align-items: center;
+			justify-content: flex-end;
+			padding-right: $padding;
+
+			p {
+				margin: 0;
+				font-size: $font-size-small;
+				text-align: right;
+
+				i {
+					color: $primary;
+					margin: 0 ($padding / 3) 0 $padding;
+				}
+
+				a {
+					color: $secondary;
+
+					&:hover {
+						color: $third;
+					}
+				}
+			}
+		}
 	}
 
 	&-bottom {
@@ -76,11 +106,12 @@
 	}
 
 	&__menu {
-		width: calc(100% - (#{$padding} * 12));
+		min-width: 50%;
 		height: $padding * 3;
-		display: block;
-		position: relative;
-		float: left;
+		display: flex;
+		justify-content: flex-end;
+		position: absolute;
+		right: 0;
 	}
 }
 
