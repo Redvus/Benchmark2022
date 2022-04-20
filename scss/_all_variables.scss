@@ -13,11 +13,11 @@ $success  : #19d3c5;
 $error : $third;
 $success : $fourth;
 
-$border_thin: 1px solid $primary;
-$border_normal: 2px solid $primary;
-$border_bold: 3px solid $primary;
+$border_thin: 0.1rem;
+$border_normal: 0.3rem;
+$border_bold: 0.6rem;
 
-$base-duration: 0.3s;
+$base-duration: 0.2s;
 $base-timing: 0.3s;
 
 $padding     : 1rem;
@@ -35,7 +35,13 @@ $headerHeightBottom: $padding;
 
 /* Page
 -------------------------------------------------- */
-$sectionTopHeight: 20vmax;
+$sectionTopHeight          : 20vmax;
+$sectionServicesTitleHeight: $padding * 6;
+$sectionServicesImageHeight: $padding * 6;
+$sectionServicesLiWidth    : $wrapperWidth / 3;
+$sectionServicesLiHeight   : $wrapperWidth / 2.5;
+
+$sectionNewsLiWidth: $wrapperWidth / 2;
 
 
 /*=====  End of Variable  ======*/
@@ -86,7 +92,7 @@ $HSmall: (media: "(max-height: 420px)");
     width: calc(((100% - (#{$margin} * (#{$numPerRow} - 1))) / #{$numPerRow}) - (#{$borderWidth} * 2));
     // width: calc((100% - (#{$borderWidth} * 2) - ((#{$numPerRow} - 1) * #{$margin})) / #{$numPerRow});
     display: inline-block;
-    border: $borderWidth solid $secondary;
+    border: $borderWidth solid $five;
     // float: left;
 
     &:nth-child(n) {
@@ -200,14 +206,23 @@ $HSmall: (media: "(max-height: 420px)");
 =            Fonts            =
 =============================*/
 
-// @include font-face (
-//     "PF DinText Pro",
-//     "fonts/PFDinTextPro-Regular/PFDinTextPro-Regular",
-//     ("eot", "woff", "ttf", "svg")
-//     ) {
-//     font-style: normal;
-//     font-weight: 400;
-// }
+@include font-face (
+    "PF DinDisplay Reg",
+    "fonts/PFDinDisplayPro-Reg/PFDinDisplayPro-Reg",
+    ("woff", "woff2")
+    ) {
+    font-style: normal;
+    font-weight: 400;
+}
+
+@include font-face (
+    "PF DinDisplay Bold",
+    "fonts/PFDinDisplayPro-Bold/PFDinDisplayPro-Bold",
+    ("woff", "woff2")
+    ) {
+    font-style: normal;
+    font-weight: 700;
+}
 
 // @include font-face (
 //     "si",
@@ -217,16 +232,16 @@ $HSmall: (media: "(max-height: 420px)");
 //     font-style: normal;
 // }
 
-@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+// @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic');
 
-$fa-font-path: 'webfonts/';
+$fa-font-path: 'fonts/';
 
-$primary-font:          'PT Mono', monospace;
-$heading-font:          "";
-$heading-font-light:    "";
+$primary-font:          $font-stack-helvetica;
+$heading-font:          "PF DinDisplay Bold";
+$heading-font-light:    "PF DinDisplay Reg";
 
-$body-font-color     : $primary;
+$body-font-color     : $secondary;
 
 $body-font-size      : 1rem !default;
 $body-font-weight    : normal !default;
@@ -285,13 +300,13 @@ $font-size-h6:      modular-scale(-1) !default; // ~1.2rem 19px
 %hx {
     font: {
         family: $heading-font;
-        weight: 400;
+        // weight: 400;
     };
     //letter-spacing: 0.04em;
     line-height: $heading-line-height;
     text-transform: uppercase;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 /*=====  End of Fonts  ======*/
 
@@ -309,7 +324,7 @@ body {
 h1 {
     @extend %hx;
     font-size: $font-size-h1;
-    color: $primary;
+    color: $secondary;
     margin: ($padding * 2) 0 0;
     line-height: 0.5;
     //text-align: center;
