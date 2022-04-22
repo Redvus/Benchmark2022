@@ -47,7 +47,8 @@ $sectionServicesImageHeight: $padding * 6;
 $sectionServicesLiWidth    : $wrapperWidth / 3;
 $sectionServicesLiHeight   : $wrapperWidth / 2.5;
 
-$sectionNewsLiWidth: $wrapperWidth / 2;
+$sectionNewsLiWidth : $wrapperWidth / 2;
+$cardHoverBackground: lighten($primary, 60%);
 
 
 /*=====  End of Variable  ======*/
