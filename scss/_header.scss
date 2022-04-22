@@ -80,7 +80,7 @@
 	}
 
 	&__logo {
-		min-width: $padding * 5;
+		width: $padding * 9.25;
 		height: $padding * 3;
 		display: block;
 		position: relative;
@@ -106,7 +106,7 @@
 	}
 
 	&__menu {
-		min-width: 50%;
+		width: calc(100% - (#{$padding} * 9.25) - (#{$padding} * 2));
 		height: $padding * 3;
 		display: flex;
 		justify-content: flex-end;

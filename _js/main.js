@@ -45,6 +45,11 @@
         ScrollTrigger.refresh();
     }
 
+    $('.item-has-children').children('a').on('click', function (event) {
+        event.preventDefault();
+        $(this).toggleClass('submenu-open').next('.submenu').slideToggle(200).end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.submenu').slideUp(200);
+    });
+
     // $('.wrapper').imagesLoaded({
     //     background: true
     // });

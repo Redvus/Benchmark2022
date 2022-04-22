@@ -19,10 +19,9 @@
 
 		li {
 			height: 100%;
-			padding: 0 $padding;
 
 			a {
-				width: 100%;
+				width: calc(100% - (#{$padding} * 2));
 				height: $headerBottomHeight;
 				display: flex;
 				justify-content: center;
@@ -30,6 +29,27 @@
 				font-family: $heading-font-light;
 				font-size: $font-size-large;
 				color: $fourth;
+				padding: 0 $padding;
+
+				&.submenu-open {
+					// background-color: $colorCategoryTitle;
+					// border-top: 0.15rem solid $filterBorderColor;
+
+					.sub-menu {
+
+
+						li {
+
+							a {
+								font-size: $font-size-large - 0.2;
+							}
+
+							// a.active {
+							//     //color: $fourth;
+							// }
+						}
+					}
+				}
 			}
 
 			// &:last-child {
@@ -37,7 +57,7 @@
 			// }
 
 			&.active {
-				background-color: darken($primary, 7%);
+				background-color: $navLiBackgroundActive;
 
 				// a {
 				// 	color: $fourth;
@@ -55,6 +75,117 @@
 
 				a {
 					color: $third;
+				}
+			}
+		}
+
+		.item-has-children {
+
+			> a {
+
+				svg#navCross {
+					width: 0.5rem;
+					height: 0.5rem;
+					display: block;
+					float: left;
+					position: relative;
+					margin-right: $padding / 5;
+					// transform: translateY(100%);
+
+					#navCrossVert {
+						fill: none;
+						stroke: $fourth;
+						stroke-width: 0.2rem;
+						transform-origin: 50% 50%;
+						transition: transform .2s;
+					}
+
+					#navCrossHorz {
+						fill: none;
+						stroke: $fourth;
+						stroke-width: 0.2rem;
+						transform-origin: 50% 50%;
+						transition: transform .2s;
+					}
+				}
+			}
+
+			ul.submenu {
+				min-width: 10rem;
+				position: absolute;
+				top: $headerHeight / 2;
+				// margin-left: -$padding;
+				background-color: $primary;
+				box-shadow: 0 0.1rem 0.1rem rgba($third, 0.2);
+				transition: all $base-duration;
+				display: none;
+				opacity: 0;
+
+				li {
+					width: 100%;
+					height: $headerHeight / 2;
+					display: flex;
+					align-items: center;
+					padding: 0;
+					position: relative;
+					cursor: pointer;
+					transition: all $base-duration;
+
+					ul.submenu {
+						transform: translateX(100%);
+					}
+
+					a {
+						// width: calc(100% - (#{$padding} * 2));
+						height: 100%;
+						display: flex;
+						align-items: center;
+						justify-content: flex-start;
+						position: relative;
+						padding: ($padding / 2) $padding;
+						color: $fourth;
+					}
+
+					&.active {
+						background-color: $navLiBackgroundActive;
+
+						a {
+							color: $fourth;
+						}
+					}
+
+					&:hover {
+						background-color: $navLiBackgroundActive;
+
+						a {
+							color: $fourth;
+						}
+					}
+				}
+			}
+
+			&:hover {
+
+				ul.submenu {
+					display: block;
+					color: $fourth;
+					opacity: 1;
+				}
+
+				> a {
+
+					svg#navCross {
+
+						#navCrossVert {
+							stroke: $third;
+							transform: rotate(90deg);
+						}
+
+						#navCrossHorz {
+							stroke: $third;
+							transform: rotate(360deg);
+						}
+					}
 				}
 			}
 		}

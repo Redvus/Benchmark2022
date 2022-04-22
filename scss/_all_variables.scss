@@ -33,6 +33,12 @@ $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight} + #{$headerLine
 $headerHeightMobile: $padding;
 $headerHeightBottom: $padding;
 
+/* Nav
+-------------------------------------------------- */
+$colorTextActive: $fourth;
+$colorTextHover : $third;
+$navLiBackgroundActive: darken($primary, 7%);
+
 /* Page
 -------------------------------------------------- */
 $sectionTopHeight          : 20vmax;
@@ -259,7 +265,7 @@ $font-size-base:    $body-font-size !default;
 $font-size-large:   $font-size-base + 0.2 !default; // ~18px
 $font-size-small:   $font-size-base - 0.2 !default; // ~14px
 
-$font-size-h1:      calc(1rem + 2vmax) !default; // ~3rem 48px modular-scale(6)
+$font-size-h1:      2.8rem !default; //calc(1rem + 2vmax) !default; // ~3rem 48px modular-scale(6)
 $font-size-h2:      calc(1rem + 0.9vmax) !default; // ~2.5rem 40px modular-scale(5)
 $font-size-h3:      calc(1rem + 0.7vmax) !default; // ~2rem 33px
 $font-size-h4:      calc(1rem + 0.15vmax) !default; // ~1.728rem 28px
@@ -281,7 +287,7 @@ $font-size-h6:      modular-scale(-1) !default; // ~1.2rem 19px
     }
 
     @include grid-media($XLarge) {
-        font-size: $font-size-large;
+        font-size: $font-size-base;
     }
 
     @include grid-media($Medium) {
