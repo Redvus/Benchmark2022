@@ -29,7 +29,7 @@
                 trigger: ".header-line",
                 scroller: ".wrapper",
                 scrub: true,
-                start: "0 86px",
+                start: "0 92px",
                 end: () => `+=${document.querySelector(".wrapper").offsetHeight - window.innerHeight}`
                 // markers: {
                 // 	startColor: "#fff",

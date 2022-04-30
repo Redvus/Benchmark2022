@@ -21,9 +21,10 @@ $footer-grid: (
     background: $footer-background;
     display: block;
     width: 100%;
-    min-height: 300px;
+    min-height: 10vh;
     position: relative;
     bottom: 0;
+    color: $fourth;
     z-index: 0;
 
     // @include media($XSmall) {
@@ -66,142 +67,137 @@ $footer-grid: (
     }
 
     &-container {
-        @include grid-column(1, $footer-grid);
-        // min-height: calc(300px - 2rem);
-        padding: 1rem 0;
-
-        // @include media($XXLarge) {
-        //     @include outer-container(1600px);
-        //     padding: modular-scale(3) 0;
-        // }
-
-        // @include media($XLarge) {
-        //     padding: ($font-size-large + 0.2) 0;
-        // }
-
-        // @include media($Medium) {
-        //     padding: 1rem;
-        // }
-
-        // @include media($Small) {
-        //     padding: 1rem;
-        // }
 
         &__top-block {
-            height: calc(250px - 2rem);
+            width: 100%;
+            height: 100%;
+            display: flex;
+
+            flex-direction: row;
+        }
+
+        &__part {
+            width: calc((100% / 4) - (#{$padding} * 2));
+            height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 1rem 0;
+            position: relative;
+            padding: ($padding * 2) 0;
+            margin-right: $padding * 2;
 
-            .top-block {
+            &:last-child {
+                width: calc((100% / 4));
+                margin-right: 0;
+            }
+        }
 
+        &__logo {
+            width: 100%;
+            margin-bottom: $padding * 2;
 
-                &__projects {
-                    width: 100%;
-                    height: calc(220px - 2rem);
+            svg {
+                width: auto;
+                height: $padding * 5;
+                display: block;
+            }
 
-                    img {
-                        width: auto;
-                        height: 3em;
-                    }
+            &--red {
+                fill: $fourth;
+            }
 
-                    // @include media($XXLarge) {
-                    //     padding: modular-scale(3) 0;
-                    // }
+            &--black {
+                fill: $third;
+            }
 
-                    // @include media($XLarge) {
-                    //     padding: ($font-size-large + 0.2) 0;
-                    // }
+        }
 
-                    // @include media($Medium) {
-                    //     text-align: center;
-                    // }
+        &__adress {
 
-                    // @include media($XSmall) {
-                    //     img {
-                    //         width: 100%;
-                    //         height: auto;
-                    //     }
-                    // }
+            p {
+                text-align: left;
+            }
 
-                    // @include media($Small) {
-                    //     width: 100%;
-                    //     margin: 0;
+            i {
+                color: $third;
+                margin-right: $padding / 2;
+            }
 
-                    //     img {
-                    //         width: auto;
-                    //         height: 3em;
-                    //         margin: 0 auto;
-                    //         display: block;
-                    //     }
-                    // }
+            a {
+                color: $fourth;
+
+                &:hover {
+                    color: $third;
                 }
+            }
+        }
 
-                &__links {
-                    width: 100%;
-                    height: 30px;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
+        &__slogan {
+            height: $padding * 3;
+            display: flex;
+            align-items: center;
+            font-family: $heading-font;
+            font-size: $font-size-large;
+            text-transform: uppercase;
+            color: $third;
+        }
 
-                    .links {
+        &__links {
+            padding-top: $padding * 6;
 
-                        &__nav {
-                            width: 70%;
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
 
-                            ul {
-                                display: flex;
-                                flex-direction: row;
+            h4 {
+                text-align: right;
+                color: $third;
+            }
 
-                                li {
-                                    margin-right: 2rem;
+            ul {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                text-align: right;
 
-                                    a {
-                                        color: $third;
+                li {
 
-                                        &.active,
-                                        &:hover {
-                                            color: #fff;
-                                        }
-                                    }
-                                }
-                            }
+                    a {
+                        color: $fourth;
+
+                        &:hover {
+                            color: $third;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__social {
+            padding-top: $padding * 6;
+
+            ul {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+
+                li {
+                    margin-left: $padding;
+
+                    a {
+                        font-size: $font-size-large;
+                        color: $fourth;
+
+                        svg {
+                            height: $font-size-large;
                         }
 
-                        &__social {
-                            width: 30%;
-                            display: flex;
-                            flex-direction: row-reverse;
-                            align-items: center;
+                        &:hover {
+                            color: $third;
 
-                            .social {
+                            svg {
 
-                                &__name {
-                                    width: 1.5rem;
-                                    height: 1.5rem;
-                                    margin-left: 1rem;
-                                    display: inline-block;
-
-                                    svg {
-                                        fill: $third;
-                                        transition: 0.2s;
-
-                                        &:hover {
-                                            fill: #fff;
-                                        }
-                                    }
+                                path {
+                                    fill: $third;
                                 }
-                            }
-
-                            .soc-facebook:before {
-                                content:'\e041';
-                            }
-
-                            .soc-vkontakte:before {
-                                content:'\e01a';
                             }
                         }
                     }
@@ -211,20 +207,19 @@ $footer-grid: (
 
         &__down-block {
             width: 100%;
-            height: calc(50px - 2rem);
+            height: $padding * 3;
             display: flex;
             flex-direction: row;
             align-items: center;
-            min-height: 50px;
-            padding: 1rem 0;
-            border-top: 1px solid #fff;
+            // background-color: $third;
+            border-top: $border_thin solid $third;
 
             .copyright {
                 width: 70%;
                 display: flex;
                 align-items: center;
                 font-size: $font-size-small;
-                color: $third;
+                color: $fourth;
 
                 p {
                     margin: 0;
@@ -241,10 +236,10 @@ $footer-grid: (
                 p {
                     font: {
                         //family: $font-family-base;
-                        size: $font-size-small;
+                        size: $font-size-small - 0.2;
                     };
-                    line-height: 1.4;
-                    color: $third;
+                    line-height: 1.2;
+                    color: $fourth;
                     display: inline-block;
                     position: relative;
                     text-align: right;
@@ -259,25 +254,25 @@ $footer-grid: (
 
                     svg {
                         width: auto;
-                        height: 2rem;
+                        height: $padding * 1.5;
                         display: block;
                         stroke-width: 0;
                         transition: all 0.2s;
 
                         .redvus-logo__red {
-                            fill: #fff;
+                            fill: $third;
                             transition: 0.2s;
                         }
 
                         .redvus-logo__deepred {
-                            fill: #fff;
+                            fill: $fourth;
                         }
 
                         &:hover {
 
 
                             .redvus-logo__red {
-                                fill: $third;
+                                fill: $fourth;
                             }
                         }
                     }
