@@ -33,26 +33,59 @@
 			width: calc(100% - #{$padding});
 			height: 100%;
 			display: flex;
+			flex-direction: row;
 			position: relative;
 			align-items: center;
 			justify-content: flex-end;
 			padding-right: $padding;
 
-			p {
-				margin: 0;
+			li {
+				width: auto;
+				height: $headerTopHeight;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				margin: 0 0 0 $padding;
 				font-size: $font-size-small;
 				text-align: right;
 
 				i {
 					color: $primary;
-					margin: 0 ($padding / 3) 0 $padding;
+					margin-right: $padding / 3;
+					font-size: $font-size-base;
 				}
 
 				a {
+					width: auto;
+					display: block;
 					color: $secondary;
 
 					&:hover {
 						color: $third;
+					}
+				}
+
+				svg {
+					width: auto;
+					height: $font-size-base;
+					display: block;
+
+					path {
+						fill: $primary;
+					}
+				}
+
+				&:hover {
+
+					i {
+						color: $third;
+					}
+
+					svg {
+
+						path {
+							fill: $third;
+						}
 					}
 				}
 			}

@@ -19,6 +19,8 @@
 
 		li {
 			height: 100%;
+			display: block;
+			position: relative;
 
 			a {
 				width: calc(100% - (#{$padding} * 2));
@@ -120,6 +122,7 @@
 				transition: all $base-duration;
 				display: none;
 				opacity: 0;
+				right: 0;
 				z-index: 9996;
 
 				li {
@@ -141,10 +144,11 @@
 						height: 100%;
 						display: flex;
 						align-items: center;
-						justify-content: flex-start;
+						justify-content: flex-end;
 						position: relative;
 						padding: ($padding / 2) $padding;
 						color: $fourth;
+						text-align: right;
 					}
 
 					&.active {

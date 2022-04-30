@@ -4,7 +4,7 @@
 
 $primary  : #7d2239;  //Бордовый
 $secondary: #243035;  //Черный
-$third    : #ff4e00;  //Оранж
+$third    : #CC3153;  //#F5537C
 $fourth   : #fff;
 $five     : #EDEDED;
 $error    : #ff9015;
@@ -21,11 +21,11 @@ $base-duration: 0.2s;
 $base-timing: 0.3s;
 
 $padding     : 1rem;
-$wrapperWidth: $padding * 78;
+$wrapperWidth: $padding * 72;
 
 /* Header
 -------------------------------------------------- */
-$headerTopHeight: $padding * 2;
+$headerTopHeight: $padding * 2.5;
 $headerBottomHeight: $padding * 3;
 $headerLineHeight: $padding / 2;
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight} + #{$headerLineHeight});
@@ -49,6 +49,8 @@ $sectionServicesLiHeight   : $wrapperWidth / 2.5;
 
 $sectionNewsLiWidth : $wrapperWidth / 2;
 $cardHoverBackground: lighten($primary, 60%);
+
+$inputHeight: $padding * 2.5;
 
 
 /*=====  End of Variable  ======*/
