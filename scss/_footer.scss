@@ -138,7 +138,7 @@ $footer-grid: (
             font-family: $heading-font;
             font-size: $font-size-large;
             text-transform: uppercase;
-            color: $third;
+            color: $fourth;
         }
 
         &__links {
@@ -147,7 +147,7 @@ $footer-grid: (
 
             h4 {
                 text-align: right;
-                color: $third;
+                color: $fourth;
             }
 
             ul {
@@ -160,10 +160,10 @@ $footer-grid: (
                 li {
 
                     a {
-                        color: $fourth;
+                        color: $third;
 
                         &:hover {
-                            color: $third;
+                            color: $fourth;
                         }
                     }
                 }
@@ -184,19 +184,23 @@ $footer-grid: (
 
                     a {
                         font-size: $font-size-large;
-                        color: $fourth;
+                        color: $third;
 
                         svg {
                             height: $font-size-large;
+
+                            path {
+                                fill: $third;
+                            }
                         }
 
                         &:hover {
-                            color: $third;
+                            color: $fourth;
 
                             svg {
 
                                 path {
-                                    fill: $third;
+                                    fill: $fourth;
                                 }
                             }
                         }

@@ -4,7 +4,7 @@
 
 $primary  : #7d2239;  //Бордовый
 $secondary: #243035;  //Черный
-$third    : #CC3153;  //#F5537C
+$third    : #da3458;  //#F5537C
 $fourth   : #fff;
 $five     : #EDEDED;
 $error    : #ff9015;
@@ -21,7 +21,7 @@ $base-duration: 0.2s;
 $base-timing: 0.3s;
 
 $padding     : 1rem;
-$wrapperWidth: $padding * 72;
+$wrapperWidth: $padding * 76;
 
 /* Header
 -------------------------------------------------- */
@@ -47,10 +47,14 @@ $sectionServicesImageHeight: $padding * 6;
 $sectionServicesLiWidth    : $wrapperWidth / 3;
 $sectionServicesLiHeight   : $wrapperWidth / 2.5;
 
-$sectionNewsLiWidth : $wrapperWidth / 2;
 $cardHoverBackground: lighten($primary, 60%);
 
 $inputHeight: $padding * 2.5;
+
+/* News
+-------------------------------------------------- */
+$sectionNewsLiWidth : $wrapperWidth / 2;
+$sectionNewsLiHeight: $wrapperWidth / 5.5;
 
 
 /*=====  End of Variable  ======*/
