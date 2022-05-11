@@ -9,13 +9,13 @@
 	justify-content: center;
 	align-items: center;
 	position: absolute;
-	border: $border_normal solid $fourth;
-	border-radius: 50%;
+	// border: $border_normal solid $fourth;
+	// border-radius: 50%;
 	background-color: transparent;
 	text-align: center;
 	cursor: pointer;
 	overflow: hidden;
-	opacity: 0.3;
+	opacity: 0.5;
 	top: 50%;
 	transform: translateY(-50%);
 	transition: all 0.3s cubic-bezier(.4,0,.2,1);
@@ -23,7 +23,7 @@
 	svg {
 		fill: none;
 		stroke: $fourth;
-		stroke-width: 10 !important;
+		stroke-width: 25 !important;
 		z-index: 10;
 		transition: all 0.3s cubic-bezier(.4,0,.2,1);
 	}
@@ -66,12 +66,12 @@
 	transform: scaleX(0);
 }
 
-.slider-top {
-	width: 100%;
-	// height: calc(((100vh - #{$headerHeight}) / 10) * 5.5);
-	height: calc(100vh - #{$headerHeight});
-	display: block;
-	position: relative;
+.section-content__gallery {
+	// width: 100%;
+	// // height: calc(((100vh - #{$headerHeight}) / 10) * 5.5);
+	// height: calc(100vh - #{$headerHeight});
+	// display: block;
+	// position: relative;
 
 	// &:after {
 	//     content: '';
@@ -88,19 +88,11 @@
 	//     z-index: 0;
 	// }
 
-	&--light {
-
-		&:after {
-			display: none;
-			visibility: hidden;
-		}
-	}
-
-	&__nav {
+	&-nav {
 		width: 3rem;
 		height: 3rem;
 		position: absolute;
-		top: 50%;
+		top: 40%;
 		left: 0;
 		transform: translateY(-50%);
 
@@ -115,7 +107,8 @@
 
 	.ms-nav-prev {
 		@extend %ms-nav-arrow;
-		left: 10%;
+		left: 0;
+		right: auto;
 		// bottom: 0;
 		// margin-left: -(4rem + $border_normal);
 
@@ -144,7 +137,8 @@
 
 	.ms-nav-next {
 		@extend %ms-nav-arrow;
-		right: 10%;
+		right: 0;
+		left: auto;
 		// margin-left: -$border_normal;
 
 		// &::after {

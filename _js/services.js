@@ -4,7 +4,9 @@
 
 	function sliderGalleryMaster() {
 		const sliderGallery = new MasterSlider();
-		// sliderIntro.control('arrows' ,{insertTo:'#sliderIntroArrow', autohide:false});
+		sliderGallery.control('arrows' ,{/*insertTo:'#sliderGalleryArrow', */autohide:false});
+		// sliderGallery.control('bullets' , {autohide:false, align:'bottom', margin:10});
+		sliderGallery.control('thumblist' ,{insertTo: '#sliderGalleryThumbs', autohide:false, overVideo:true, dir:'h', speed:17, inset:false, arrows:false, hover:false, customClass:'', align:'bottom',type:'thumbs', margin:5, width:128, height:72, space:5, fillMode:'fill'});
 
 		if (document.body.clientWidth < 768) {
 			sliderGallery.setup('sliderGallery', {

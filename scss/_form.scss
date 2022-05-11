@@ -84,10 +84,10 @@
 			transition: all 0.3s;
 		}
 
-		&:focus::-ms-input-placeholder {
-			opacity: 0;
-			transition: all 0.3s;
-		}
+		// &:focus::-ms-input-placeholder {
+		// 	opacity: 0;
+		// 	transition: all 0.3s;
+		// }
 
 		&::-webkit-input-placeholder {
 			/* WebKit browsers */
@@ -100,16 +100,10 @@
 			opacity: 1;
 		}
 
-		&::-moz-placeholder {
-			/* Mozilla Firefox 19+ */
-			color: $primary;
-			opacity: 1;
-		}
-
-		&::-ms-input-placeholder {
-			/* Internet Explorer 10+ */
-			color: $primary;
-		}
+		// &::-ms-input-placeholder {
+		// 	/* Internet Explorer 10+ */
+		// 	color: $primary;
+		// }
 	}
 
 	input[type='text'],
