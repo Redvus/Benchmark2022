@@ -2,10 +2,18 @@
 
     'use strict';
 
+    // const sectionProjectLi = $('.section-content__project');
 
+    // function projectsGallery() {
+    //     const lightbox = new PhotoSwipeLightbox({
+    //         gallery: '.section-content__project',
+    //         children: 'a'
+    //       });
+    //       lightbox.init();
+    // }
 
     function initPage() {
-
+        // projectsGallery();
     }
 
     function initPageMobile() {
