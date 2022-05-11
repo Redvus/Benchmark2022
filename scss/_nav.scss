@@ -120,9 +120,9 @@
 			}
 
 			ul.submenu {
-				min-width: 10rem;
+				min-width: $padding * 8;
 				position: absolute;
-				top: $headerHeight / 2;
+				// top: $headerHeight / 2;
 				// margin-left: -$padding;
 				background-color: $primary;
 				box-shadow: 0 0.1rem 0.1rem rgba($third, 0.2);
@@ -134,7 +134,7 @@
 
 				li {
 					width: 100%;
-					height: $headerHeight / 2;
+					// height: $headerHeight / 2;
 					display: flex;
 					align-items: center;
 					padding: 0;

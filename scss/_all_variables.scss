@@ -4,7 +4,7 @@
 
 $primary  : #7d2239;  //Бордовый
 $secondary: #243035;  //Черный
-$third    : #da3458;  //#F5537C
+$third    : #bab7b2;  //#da3458, #bab2b4
 $fourth   : #fff;
 $five     : #EDEDED;
 $error    : #ff9015;
@@ -47,9 +47,11 @@ $sectionServicesImageHeight: $padding * 6;
 $sectionServicesLiWidth    : $wrapperWidth / 3;
 $sectionServicesLiHeight   : $wrapperWidth / 2.5;
 
-$cardHoverBackground: lighten($primary, 60%);
+$cardHoverBackground: lighten($third, 15%); //lighten($primary, 60%)
 
 $inputHeight: $padding * 2.5;
+
+$structureLogoWidth: 20%;
 
 /* News
 -------------------------------------------------- */
@@ -409,8 +411,12 @@ a {
     // }
 }
 
+i {
+    transition: color $base-duration;
+}
+
 svg {
-    transition: all 0.3s;
+    transition: all $base-duration;
 }
 
 %input {
