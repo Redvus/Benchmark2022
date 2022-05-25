@@ -66,302 +66,28 @@
 	transform: scaleX(0);
 }
 
-.section-content__gallery {
-	// width: 100%;
-	// // height: calc(((100vh - #{$headerHeight}) / 10) * 5.5);
-	// height: calc(100vh - #{$headerHeight});
-	// display: block;
-	// position: relative;
+// .section-content__gallery {
+// 	width: 100%;
+// 	// height: calc(((100vh - #{$headerHeight}) / 10) * 5.5);
+// 	height: calc(100vh - #{$headerHeight});
+// 	display: block;
+// 	position: relative;
 
-	// &:after {
-	//     content: '';
-	//     width: 75%;
-	//     height: 1rem;
-	//     display: block;
-	//     position: absolute;
-	//     bottom: -0.5rem;
-	//     left: 50%;
-	//     transform: translateX(-50%);
-	//     background-image: url('images/waveCategoryWhite.png');
-	//     background-repeat: repeat-x;
-	//     opacity: 1;
-	//     z-index: 0;
-	// }
-
-	&-nav {
-		width: 3rem;
-		height: 3rem;
-		position: absolute;
-		top: 40%;
-		left: 0;
-		transform: translateY(-50%);
-
-		// @include grid-media($Small) {
-		//     width: $padding * 6;
-		//     height: $padding * 3;
-		//     left: 0;
-		//     bottom: 0.9rem;
-		//     transform: translateX(-100%);
-		// }
-	}
-
-	.ms-nav-prev {
-		@extend %ms-nav-arrow;
-		left: 0;
-		right: auto;
-		// bottom: 0;
-		// margin-left: -(4rem + $border_normal);
-
-		// &::after {
-		//     @extend %arrow-after;
-		//     transform-origin: center right;
-		// }
-
-		&:hover {
-			opacity: 1;
-
-			svg {
-				transform: translateX(-5px);
-			}
-
-			// &::after {
-			//     transform: scaleX(1);
-			//     transition-delay: 0s;
-			// }
-		}
-
-		// @include grid-media($Small) {
-		// 	margin-left: -(($padding * 3) + $border_thin);
-		// }
-	}
-
-	.ms-nav-next {
-		@extend %ms-nav-arrow;
-		right: 0;
-		left: auto;
-		// margin-left: -$border_normal;
-
-		// &::after {
-		//     @extend %arrow-after;
-		//     transform-origin: center left;
-		// }
-
-		&:hover {
-			opacity: 1;
-
-			svg {
-				transform: translateX(5px);
-			}
-
-			// &::after {
-			//     transform: scaleX(1);
-			//     transition-delay: 0s;
-			// }
-		}
-	}
-
-	// &--light {
-	// 	visibility: visible;
-
-	// 	.ms-nav-prev,
-	// 	.ms-nav-next {
-	// 		border-color: $elementlightBackground;
-
-	// 		svg {
-	// 			stroke: $elementlightBackground;
-	// 		}
-	// 	}
-	// }
-
-	&--page {
-		visibility: visible;
-
-		.ms-nav-prev,
-		.ms-nav-next {
-			opacity: 0.5;
-		}
-	}
-
-	&--single {
-		.ms-nav-prev,
-		.ms-nav-next {
-			visibility: hidden;
-		}
-	}
-
-	&__picture {
-		width: 70%;
-		height: calc(((100vh - #{$headerHeight}) / 10) * 5.5);
-		display: flex;
-		align-items: flex-end;
-		justify-content: center;
-		position: relative;
-		padding: 0 15%;
-
-		picture {
-			width: 100%;
-			height: 100%;
-			display: block;
-			// border-bottom: $border_normal solid $fourth;
-
-			img {
-				width: 100%;
-				height: 100%;
-				display: block;
-				object-position: center bottom;
-				object-fit: contain;
-			}
-
-			&:after {
-				content: '';
-				width: 75%;
-				height: 1rem;
-				display: block;
-				position: absolute;
-				bottom: -0.5rem;
-				left: 50%;
-				transform: translateX(-50%);
-				background-image: url('images/waveCategoryWhite.png');
-				background-repeat: repeat-x;
-				opacity: 1;
-				z-index: 0;
-			}
-		}
-	}
-
-	&__info {
-		width: 100%;
-		height: calc((((100vh - #{$headerHeight}) / 10) * 4.5) - 2rem);
-		display: block;
-		position: relative;
-		padding: 2rem 0 0;
-	}
-
-	&__title {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-
-		i {
-			font-size: $font-size-h2;
-			margin-left: 1rem;
-			color: $fourth;
-			transition: transform 0.3s;
-		}
-
-		&:hover {
-
-			i {
-				transform: translateX(30%);
-			}
-		}
-	}
-
-	&__text {
-		width: 60%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: flex-start;
-		margin: 0 auto;
-		text-align: center;
-
-		&--light {
-			color: $primary;
-
-			h2, i {
-				color: $primary;
-			}
-
-			.slider-top__link {
-				color: $primary;
-				border-color: $primary;
-
-				&:after {
-					background-color: $primary;
-				}
-
-				&:hover {
-					color: $fourth;
-				}
-			}
-		}
-	}
-
-	&__link {
-		width: 10rem;
-		height: 3rem;
-		// padding: 0.5rem 1rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: relative;
-		border: $border_normal solid $fourth;
-		// @include border-top-radius(1.5rem);
-		// @include border-bottom-radius(1.5rem);
-		background-color: transparent;
-		color: $fourth;
-		margin-top: 1rem;
-		overflow: hidden;
-		background-clip: border-box;
-		transition: all 0.3s cubic-bezier(.4,0,.2,1) 75ms !important;
-
-		&:after {
-			content: '';
-			//width: 100%;
-			//height: 100%;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			position: absolute;
-			background-color: $fourth;
-			z-index: -1;
-			box-sizing: border-box;
-			transition: transform 0.3s cubic-bezier(.4,0,.2,1) 75ms !important;
-			transform: scaleX(0);
-			transform-origin: 0 0;
-		}
-
-		&:hover {
-			// background-color: $fourth;
-			color: $primary;
-
-			&:after {
-				transform: scaleX(1);
-				transition-delay: 0s;
-			}
-		}
-	}
-
-	@include grid-media($Small) {
-		height: calc(100vh - #{$headerHeightMobile} - #{$headerHeightBottom} - 1rem);
-		padding-top: 1rem;
-
-		&:after {
-			width: 90%;
-			display: none;
-			visibility: hidden;
-		}
-
-		&__info {
-			min-height: 50vh;
-			height: initial;
-			padding: 0;
-		}
-
-		&__text {
-			width: calc(100% - 2rem);
-			margin: 1rem 1rem $headerHeightMobile;
-		}
-
-		&__nav {
-			display: none;
-			visibility: hidden;
-		}
-	}
-}
+// 	&:after {
+// 	    content: '';
+// 	    width: 75%;
+// 	    height: 1rem;
+// 	    display: block;
+// 	    position: absolute;
+// 	    bottom: -0.5rem;
+// 	    left: 50%;
+// 	    transform: translateX(-50%);
+// 	    background-image: url('images/waveCategoryWhite.png');
+// 	    background-repeat: repeat-x;
+// 	    opacity: 1;
+// 	    z-index: 0;
+// 	}
+// }
 
 .slider-intro {
 	width: 100%;
@@ -657,10 +383,10 @@
 				visibility: visible;
 			}
 
-			&--desktop {
-				display: none;
-				visibility: hidden;
-			}
+			// &--desktop {
+			// 	display: none;
+			// 	visibility: hidden;
+			// }
 		}
 	}
 }
