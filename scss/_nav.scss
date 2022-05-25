@@ -202,6 +202,50 @@
 			}
 		}
 	}
+
+	&__mobile {
+
+		li {
+			margin: ($padding / 3) 0;
+
+			a {
+				font-family: $heading-font;
+				font-size: $font-size-base;
+				text-transform: uppercase;
+			}
+
+			&.active {
+
+				a {
+					color: $secondary;
+				}
+			}
+
+			&.item-has-children {
+				margin-bottom: $padding;
+
+				a {
+					color: $third;
+				}
+
+				.submenu {
+					margin-top: -($padding / 2);
+
+					li {
+
+						a {
+							color: $primary;
+						}
+					}
+				}
+
+				&:last-child {
+					margin-top: $padding;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
 }
 
 /*============  End of Nav  =============*/

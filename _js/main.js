@@ -45,6 +45,89 @@
         ScrollTrigger.refresh();
     }
 
+    /* Navigtion
+    -------------------------------------------------- */
+
+    /*---------  Nav Mobile  ---------*/
+    const navButtonMobile = document.getElementById('navButtonMobile'),
+        navMainMobile = document.getElementById('navMainMobile'),
+        navMainListMobile = document.querySelectorAll('#navMainMobile ul > li'),
+        navBack = document.querySelector('.header-mobile__nav-mask'),
+        navButtonLineTop = document.querySelector('.header-mobile__nav-line__top'),
+        navButtonLineMiddle = document.querySelector('.header-mobile__nav-line__middle'),
+        navButtonLineBottom = document.querySelector('.header-mobile__nav-line__bottom')
+    ;
+
+    function navMenuOpenMobile() {
+
+        let tl = new gsap.timeline({
+            reversed: true
+        });
+
+        tl
+            .to(navBack, {
+                duration: 0.4,
+                delay: -1,
+                autoAlpha: 1,
+                display: 'block',
+                zIndex: '9995',
+                ease: 'power1'
+            })
+            .to(navMainMobile, {
+                duration: 0.4,
+                delay: -1.2,
+                x: '0%',
+                zIndex: '9996',
+                ease: 'power2'
+            })
+            .to(navButtonLineMiddle, {
+                duration: 0.3,
+                delay: -0.6,
+                rotation: '180deg',
+                ease: 'power2'
+            })
+            .to(navButtonLineTop, {
+                duration: 0.3,
+                delay: -0.6,
+                rotation: '135deg',
+                x: '27%',
+                y: '200%',
+                scaleX: 0.6,
+                ease: 'power2'
+            })
+            .to(navButtonLineBottom, {
+                duration: 0.3,
+                delay: -0.6,
+                rotation: '-135deg',
+                x: '27%',
+                y: '-200%',
+                scaleX: 0.6,
+                ease: 'power2'
+            })
+            .from(navMainListMobile, {
+                duration: 0.3,
+                delay: -0.5,
+                stagger: 0.07,
+                x: '10%',
+                autoAlpha: 0,
+                ease: 'back'
+            })
+        ;
+
+        /*jshint -W030 */
+        navButtonMobile.addEventListener('click', function () {
+            tl.reversed() ? tl.restart() : tl.reverse();
+        });
+
+        navBack.addEventListener('click', function () {
+            tl.reverse();
+        });
+
+    }
+
+    /* End of Navigtion
+    -------------------------------------------------- */
+
     function navMain() {
         $('.item-has-children').children('a').on('click', function (event) {
             event.preventDefault();
@@ -77,7 +160,7 @@
     }
 
     function initPageMobile() {
-
+        navMenuOpenMobile();
     }
 
     if (document.body.clientWidth > 768 || screen.width > 768) {
