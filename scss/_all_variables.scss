@@ -22,6 +22,7 @@ $base-timing: 0.3s;
 
 $padding     : 1rem;
 $wrapperWidth: $padding * 76;
+$wrapperWidthMobile: calc(100% - (#{$padding} * 2));
 
 /* Header
 -------------------------------------------------- */
@@ -47,16 +48,22 @@ $sectionServicesImageHeight: $padding * 6;
 $sectionServicesLiWidth    : $wrapperWidth / 3;
 $sectionServicesLiHeight   : $wrapperWidth / 2.5;
 
-$cardHoverBackground: lighten($third, 15%); //lighten($primary, 60%)
+$cardHoverBackground: lighten($third, 15%);  //lighten($primary, 60%)
 
 $inputHeight: $padding * 2.5;
 
 $structureLogoWidth: 20%;
 
+$sectionTopHeightMobile: 30vmax;
+
 /* News
 -------------------------------------------------- */
 $sectionNewsLiWidth : $wrapperWidth / 2;
 $sectionNewsLiHeight: $wrapperWidth / 5.5;
+
+/* Mobile
+-------------------------------------------------- */
+$headerMobileTopHeight: $padding * 3;
 
 
 /*=====  End of Variable  ======*/
@@ -344,6 +351,11 @@ h1 {
     line-height: 0.5;
     //text-align: center;
     //transition: all .3s;
+
+    @include grid-media($XSmall) {
+        font-size: calc(#{$font-size-base} + 1.5vmax);
+        line-height: 1;
+    }
 }
 
 h2 {

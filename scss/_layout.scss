@@ -25,6 +25,10 @@
 		transition: opacity 0.3s;
 		transition-timing-function: ease-out;
 	}
+
+	@include grid-media($XSmall) {
+		padding-top: $headerMobileTopHeight;
+	}
 }
 
 .container {
