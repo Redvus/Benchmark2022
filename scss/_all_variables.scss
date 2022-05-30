@@ -20,58 +20,8 @@ $border_bold: 0.6rem;
 $base-duration: 0.2s;
 $base-timing: 0.3s;
 
-$padding     : 1rem;
-$wrapperWidth: $padding * 76;
-$wrapperWidthMobile: calc(100% - (#{$padding} * 2));
-
-/* Header
+/* Media
 -------------------------------------------------- */
-$headerTopHeight: $padding * 2.5;
-$headerBottomHeight: $padding * 3;
-$headerLineHeight: $padding / 2;
-$headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight} + #{$headerLineHeight});
-
-$headerHeightMobile: $padding;
-$headerHeightBottom: $padding;
-
-/* Nav
--------------------------------------------------- */
-$colorTextActive: $fourth;
-$colorTextHover : $third;
-$navLiBackgroundActive: darken($primary, 7%);
-
-/* Page
--------------------------------------------------- */
-$sectionTopHeight          : 20vmax;
-$sectionServicesTitleHeight: $padding * 6;
-$sectionServicesImageHeight: $padding * 6;
-$sectionServicesLiWidth    : $wrapperWidth / 3;
-$sectionServicesLiHeight   : $wrapperWidth / 2.5;
-
-$cardHoverBackground: lighten($third, 15%);  //lighten($primary, 60%)
-
-$inputHeight: $padding * 2.5;
-
-$structureLogoWidth: 20%;
-
-$sectionTopHeightMobile: 30vmax;
-
-/* News
--------------------------------------------------- */
-$sectionNewsLiWidth : $wrapperWidth / 2;
-$sectionNewsLiHeight: $wrapperWidth / 5.5;
-
-/* Mobile
--------------------------------------------------- */
-$headerMobileTopHeight: $padding * 3;
-
-
-/*=====  End of Variable  ======*/
-
-/*=============================
-=            Media            =
-=============================*/
-
 $main-grid: (
     columns: 12,
     gutter: 0
@@ -102,7 +52,77 @@ $XSmall: (media: "(max-width: #{$pad_v})");
 $Small: (media: "(max-width: #{$mobile})");
 $HSmall: (media: "(max-height: 420px)");
 
-/*=====  End of Media  ======*/
+/* End of Media
+-------------------------------------------------- */
+
+$padding     : 1rem;
+$wrapperWidth: $padding * 76;
+$wrapperWidthPad: $padding * 62;
+$wrapperWidthMobile: calc(100% - (#{$padding} * 2));
+
+/* Layout
+-------------------------------------------------- */
+%wrapperWidth {
+    width: $padding * 76;
+
+    @include grid-media($Medium) {
+        width: calc(100vw - (#{$padding} * 2));
+        padding: 0 $padding;
+    }
+
+    @include grid-media($XSmall) {
+        width: calc(100% - (#{$padding} * 2));
+    }
+}
+
+/* Header
+-------------------------------------------------- */
+$headerTopHeight: $padding * 2.5;
+$headerBottomHeight: $padding * 3;
+$headerLineHeight: $padding / 2;
+$headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight} + #{$headerLineHeight});
+
+$headerHeightMobile: $padding;
+$headerHeightBottom: $padding;
+
+/* Nav
+-------------------------------------------------- */
+$colorTextActive: $fourth;
+$colorTextHover : $third;
+$navLiBackgroundActive: darken($primary, 7%);
+
+/* Page
+-------------------------------------------------- */
+$sectionTopHeight          : 20vmax;
+$sectionServicesTitleHeight: $padding * 6;
+$sectionServicesImageHeight: $padding * 6;
+$sectionServicesLiWidth    : $wrapperWidth / 3;
+$sectionServicesLiHeight   : $wrapperWidth / 2.5;
+
+$sectionServicesLiWidthPad : 100% / 2;
+
+$cardHoverBackground: lighten($third, 15%);  //lighten($primary, 60%)
+
+$inputHeight: $padding * 2.5;
+
+$structureLogoWidth: 20%;
+
+$sectionTopHeightMobile: 40vmax;
+
+/* News
+-------------------------------------------------- */
+$sectionNewsLiWidth : $wrapperWidth / 2;
+$sectionNewsLiHeight: $wrapperWidth / 5.5;
+
+$sectionNewsLiWidthPad : $wrapperWidthPad / 2;
+
+/* Mobile
+-------------------------------------------------- */
+$headerMobileTopHeight: $padding * 3;
+
+
+/*=====  End of Variable  ======*/
+
 
 /*=================================================
 =                   Row Machine                   =

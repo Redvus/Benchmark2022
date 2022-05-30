@@ -59,7 +59,7 @@ $footer-grid: (
     }
 
     &-wrapper {
-        width: $wrapperWidth;
+        @extend %wrapperWidth;
         height: 100%;
         display: block;
         position: relative;

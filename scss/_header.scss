@@ -13,7 +13,7 @@
 	z-index: 9990;
 
 	&__wrapper {
-		width: $wrapperWidth;
+		@extend %wrapperWidth;
 		height: 100%;
 		display: block;
 		position: relative;
