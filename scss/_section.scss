@@ -25,7 +25,7 @@
 
 		h2 {
 			font-size: $font-size-h1;
-			color: $primary;
+			// color: $primary;
 		}
 
 		a {
@@ -183,6 +183,11 @@
 				text-align: center;
 			}
 		}
+	}
+
+	&-map {
+		height: $sectionTopHeight + 10;
+		overflow: hidden;
 	}
 
 	&-services {
@@ -1290,14 +1295,15 @@
 
 		&__map {
 			width: 100%;
-			height: 30vh;
+			height: 100%;
 			display: block;
 			position: relative;
-			top: -($padding * 9);
+			// top: -($padding * 9);
+			top: -10%;
 			left: 0;
 			background-color: $five;
-			margin-bottom: $padding * 9;
-			z-index: 10;
+			// margin-bottom: $padding * 9;
+			z-index: 1;
 		}
 
 		&__block {

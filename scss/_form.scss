@@ -17,11 +17,11 @@
 			justify-content: center;
 			align-items: center;
 			position: absolute;
-			background-color: $primary;
+			background-color: $secondary;
 			// margin-top: 0.15rem;
 			// border-top-left-radius: $inputHeight / 2;
 			// border-bottom-left-radius: $inputHeight / 2;
-			z-index: -1;
+			z-index: 10;
 
 			&:before {
 				font-family: 'fontawesome';
@@ -60,18 +60,18 @@
 		font-family: $primary-font;
 		font-size: $font-size-base;
 		// text-align: center;
-		border: 0.15rem solid $primary;
+		border: 0.15rem solid $secondary;
 		// border-top-left-radius: $inputHeight / 2;
 		// border-bottom-left-radius: $inputHeight / 2;
 		// border-top-right-radius: $inputHeight / 2;
 		// border-bottom-right-radius: $inputHeight / 2;
 		background-color: transparent;
-		color: $primary;
+		color: $secondary;
 		transition: all 0.3s;
 
 		&:focus {
 			background-color: $fourth;
-			border-color: $secondary;
+			// border-color: $primary;
 		}
 
 		&:focus::-webkit-input-placeholder {
@@ -91,12 +91,12 @@
 
 		&::-webkit-input-placeholder {
 			/* WebKit browsers */
-			color: $primary;
+			color: $secondary;
 		}
 
 		&::-moz-placeholder {
 			/* Mozilla Firefox 4 to 18 */
-			color: $primary;
+			color: $secondary;
 			opacity: 1;
 		}
 
@@ -113,6 +113,16 @@
 		height: $inputHeight;
 		padding: 0 1rem 0 ($inputHeight + 1.5rem);
 		@extend %input;
+
+		&:focus {
+
+			.form-ajax__input {
+
+				.f-icon {
+					background-color: $primary;
+				}
+			}
+		}
 	}
 
 	select {
@@ -224,8 +234,8 @@
 		// top: 1px;
 		width: 20px;
 		height: 20px;
-		border: 0.15rem solid $primary;
-		background-color: #fff;
+		border: 0.15rem solid $secondary;
+		background-color: $fourth;
 		transition: background 150ms ease;
 		cursor: pointer;
 		margin-top: -0.3rem;
@@ -255,7 +265,7 @@
 		top: 1px;
 		width: 20px;
 		height: 20px;
-		border: 2px solid $primary;
+		border: 2px solid $secondary;
 		transition: background 150ms ease;
 		cursor: pointer;
 		box-sizing: border-box;
@@ -264,7 +274,7 @@
 		&:checked {
 			&~.checkbox {
 				border-color: transparent;
-				background: $primary;
+				background: $secondary;
 				animation: wiggle 400ms ease;
 
 				&:after {
