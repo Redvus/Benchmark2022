@@ -798,7 +798,7 @@
 	}
 
 	&-content {
-		min-height: 80vh;
+		min-height: 50vh;
 		margin-bottom: $padding * 9;
 
 		&__description {
@@ -1111,11 +1111,23 @@
 			display: block;
 			position: relative;
 			margin-left: $padding * 2;
+			text-align: justify;
+			text-indent: $padding;
 			// columns: 2;
 			// column-gap: $padding * 2;
 
 			p {
 				margin: 0;
+			}
+
+			b {
+				margin-top: $padding / 2;
+			}
+
+			ul {
+				list-style: disc;
+				padding-left: $padding;
+				text-indent: 0;
 			}
 		}
 
