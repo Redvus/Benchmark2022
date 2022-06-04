@@ -1143,7 +1143,7 @@
 				right: 0;
 				bottom: 7vh;
 				overflow: hidden;
-				z-index: 2;
+				z-index: 0;
 
 				img {
 					width: 100%;
@@ -1164,7 +1164,7 @@
 					left: 0;
 					bottom: 7vh;
 					overflow: hidden;
-					z-index: 2;
+					z-index: 0;
 
 					img {
 						width: 100%;
@@ -1306,6 +1306,7 @@
 				align-items: center;
 				justify-content: flex-start;
 				padding: ($padding * 2) $padding;
+				text-align: center;
 			}
 
 			&-description {
