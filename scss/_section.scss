@@ -359,6 +359,14 @@
 				a {
 					width: calc(#{$sectionServicesLiWidthPad} - #{$border_thin});
 				}
+
+				&-image {
+
+					img {
+						width: 100%;
+						object-position: center;
+					}
+				}
 			}
 		}
 
@@ -1488,7 +1496,7 @@
 
 				li {
 					width: 100%;
-					margin-bottom: $padding * 3;
+					margin-bottom: $padding * 2;
 
 					.specialist {
 
@@ -1797,6 +1805,10 @@
 
 			&__description {
 				flex-direction: column;
+
+				&--left {
+					flex-direction: column;
+				}
 			}
 
 			&__gallery {
@@ -1830,6 +1842,11 @@
 			&__introtext {
 				width: 100%;
 				margin-left: 0;
+
+				&--left {
+					width: 100%;
+					margin-right: 0;
+				}
 			}
 
 			&__block {
@@ -1896,6 +1913,72 @@
 				&-arrow {
 					display: none;
 					visibility: hidden;
+				}
+			}
+
+			&__image {
+				width: 100%;
+				min-height: $padding * 3;
+				margin-bottom: $padding;
+				border-right: 0;
+
+				&-second {
+					display: none;
+					visibility: hidden;
+
+					&--left {
+						display: none;
+						visibility: hidden;
+					}
+				}
+
+				&--left {
+					width: 100%;
+					min-height: $padding * 3;
+					margin-bottom: $padding;
+					border-left: 0;
+				}
+			}
+
+			&__card {
+				flex-direction: column;
+
+				li {
+					@include rowMachine(1, ($padding * 2));
+				}
+
+				&full {
+
+					li {
+						flex-direction: column;
+					}
+
+					&-block {
+						width: 100%;
+					}
+
+					&-description {
+						width: 100%;
+						flex-direction: row;
+
+						.line-value {
+							width: auto;
+							height: $padding * 4;
+							padding-bottom: 0;
+							font-size: $font-size-h1;
+							line-height: 1;
+							align-items: center;
+						}
+
+						.line-text {
+							width: auto;
+							height: $padding * 4;
+							padding-top: 0;
+							padding-left: $padding / 2;
+							line-height: 1;
+							align-items: center;
+						}
+					}
 				}
 			}
 		}

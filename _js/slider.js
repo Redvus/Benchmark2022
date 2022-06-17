@@ -9,7 +9,7 @@
     function sliderIntroMaster() {
         const sliderIntro = new MasterSlider();
         // sliderIntro.control('arrows' ,{insertTo:'#sliderIntroArrow', autohide:false});
-        sliderIntro.control('thumblist' ,{insertTo: '#sliderIntroThumbs', autohide:false, overVideo:true, dir:'h', speed:17, inset:false, arrows:false, hover:false, customClass:'', align:'bottom',type:'thumbs', margin:5, width:128, height:72, space:5, fillMode:'fill'});
+        // sliderIntro.control('thumblist' ,{insertTo: '#sliderIntroThumbs', autohide:false, overVideo:true, dir:'h', speed:17, inset:false, arrows:false, hover:false, customClass:'', align:'bottom',type:'thumbs', margin:5, width:128, height:72, space:5, fillMode:'fill'});
 
         if (document.body.clientWidth < 768) {
             sliderIntro.setup('sliderIntro', {
@@ -27,10 +27,10 @@
                 swipe: true
                 // mouse: false
             });
-        } else if (document.body.clientWidth < 1024) {
+        } else if (document.body.clientWidth < 1280) {
             sliderIntro.setup('sliderIntro', {
-                width: 1024,
-                height: 1768,
+                width: 1280,
+                height: 720,
                 autoHeight: true,
                 space: 0,
                 loop: true,

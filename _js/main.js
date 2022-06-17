@@ -107,7 +107,7 @@
             .from(navMainListMobile, {
                 duration: 0.3,
                 delay: -0.5,
-                stagger: 0.07,
+                stagger: 0.03,
                 x: '10%',
                 autoAlpha: 0,
                 ease: 'back'

@@ -109,9 +109,9 @@
 	input[type='text'],
 	input[type='email'],
 	input[type='number'] {
-		width: calc(100% - 1rem - (#{$inputHeight} + 1.5rem));
+		width: calc(100% - (#{$padding} * 2));
 		height: $inputHeight;
-		padding: 0 1rem 0 ($inputHeight + 1.5rem);
+		padding: 0 $padding;
 		@extend %input;
 
 		&:focus {
