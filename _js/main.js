@@ -66,7 +66,7 @@
 
         tl
             .to(navBack, {
-                duration: 0.4,
+                duration: 0.3,
                 delay: -1,
                 autoAlpha: 1,
                 display: 'block',
@@ -74,20 +74,20 @@
                 ease: 'power1'
             })
             .to(navMainMobile, {
-                duration: 0.4,
+                duration: 0.3,
                 delay: -1.2,
                 x: '0%',
                 zIndex: '9996',
                 ease: 'power2'
             })
             .to(navButtonLineMiddle, {
-                duration: 0.3,
+                duration: 0.2,
                 delay: -0.6,
                 rotation: '180deg',
                 ease: 'power2'
             })
             .to(navButtonLineTop, {
-                duration: 0.3,
+                duration: 0.2,
                 delay: -0.6,
                 rotation: '135deg',
                 x: '27%',
@@ -96,7 +96,7 @@
                 ease: 'power2'
             })
             .to(navButtonLineBottom, {
-                duration: 0.3,
+                duration: 0.2,
                 delay: -0.6,
                 rotation: '-135deg',
                 x: '27%',
@@ -104,14 +104,14 @@
                 scaleX: 0.6,
                 ease: 'power2'
             })
-            .from(navMainListMobile, {
-                duration: 0.3,
-                delay: -0.5,
-                stagger: 0.03,
-                x: '10%',
-                autoAlpha: 0,
-                ease: 'back'
-            })
+            // .from(navMainListMobile, {
+            //     duration: 0.2,
+            //     delay: -0.25,
+            //     stagger: 0.01,
+            //     x: '10%',
+            //     autoAlpha: 0,
+            //     ease: 'back'
+            // })
         ;
 
         /*jshint -W030 */
@@ -131,7 +131,16 @@
     function navMain() {
         $('.item-has-children').children('a').on('click', function (event) {
             event.preventDefault();
-            $(this).toggleClass('submenu-open').next('.submenu').slideToggle(200).end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.submenu').slideUp(200);
+            $(this).toggleClass('submenu-open')
+                .next('.submenu')
+                .slideToggle(200)
+                .end()
+                .parent('.item-has-children')
+                .siblings('.item-has-children')
+                .children('a')
+                .removeClass('submenu-open')
+                .next('.submenu')
+                .slideUp(200);
         });
     }
 
@@ -163,7 +172,7 @@
         navMenuOpenMobile();
     }
 
-    if (document.body.clientWidth > 768 || screen.width > 768) {
+    if (document.body.clientWidth > 820 || screen.width > 820) {
         initPage();
     } else {
         initPageMobile();
