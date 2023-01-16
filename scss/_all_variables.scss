@@ -40,8 +40,8 @@ $third-grid: (
 $imac27 : 2560px;
 $imac21 : 1920px;
 $cinema : 1680px;
-$pad_g : 1024px;
-$pad_v : 768px;
+$pad_g : 1080px;
+$pad_v : 820px;
 $mobile : 570px;
 
 $XXLarge: (media: "(min-width: #{$imac21})");
@@ -66,11 +66,14 @@ $wrapperWidthMobile: calc(100% - (#{$padding} * 2));
     width: $padding * 76;
 
     @include grid-media($Medium) {
-        width: calc(100vw - (#{$padding} * 2));
-        padding: 0 $padding;
+        width: $padding * 62;
     }
 
     @include grid-media($XSmall) {
+        width: calc(100% - (#{$padding} * 2));
+    }
+
+    @include grid-media($Small) {
         width: calc(100% - (#{$padding} * 2));
     }
 }
@@ -266,6 +269,51 @@ $headerMobileTopHeight: $padding * 3;
     font-weight: 700;
 }
 
+@include font-face (
+    "Raleway Regular",
+    "fonts/Raleway-Regular/Raleway-Regular",
+    ("woff", "woff2")
+    ) {
+    font-style: normal;
+    font-weight: 400;
+}
+
+@include font-face (
+    "Raleway Medium",
+    "fonts/Raleway-Medium/Raleway-Medium",
+    ("woff", "woff2")
+    ) {
+    font-style: normal;
+    font-weight: 400;
+}
+
+@include font-face (
+    "Rubik Medium",
+    "fonts/Rubik-Medium/Rubik-Medium",
+    ("woff", "woff2")
+    ) {
+    font-style: normal;
+    font-weight: 400;
+}
+
+@include font-face (
+    "Rubik Regular",
+    "fonts/Rubik-Regular/Rubik-Regular",
+    ("woff", "woff2")
+    ) {
+    font-style: normal;
+    font-weight: 400;
+}
+
+@include font-face (
+    "Rubik Light",
+    "fonts/Rubik-Light/Rubik-Light",
+    ("woff", "woff2")
+    ) {
+    font-style: normal;
+    font-weight: 400;
+}
+
 // @include font-face (
 //     "si",
 //     "fonts/socicon/socicon",
@@ -275,13 +323,30 @@ $headerMobileTopHeight: $padding * 3;
 // }
 
 // @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic');
+// @import url('https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic');
+// @import url('https://fonts.googleapis.com/css2?family=Finlandica&family=Raleway:wght@400;500;600;700;800&family=Oswald:wght@300;400;500&family=Rubik:wght@300;400;500?family=Commissioner:wght@300;400;500&family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&family=Source+Sans+Pro&display=swap');
 
 $fa-font-path: 'fonts/';
 
-$primary-font:          $font-stack-helvetica;
-$heading-font:          "PF DinDisplay Bold";
-$heading-font-light:    "PF DinDisplay Reg";
+// $primary-font:          $font-stack-helvetica;
+// $primary-font:          $font-stack-verdana;
+// $primary-font:          "Raleway Regular";
+$primary-font:          "Rubik Light";
+// $primary-font:          'Roboto', sans-serif;
+
+// $heading-font:          "PF DinDisplay Bold";
+// $heading-font-light:    "PF DinDisplay Reg";
+
+// $heading-font:          'Raleway', sans-serif;
+// $heading-font-light:    'Raleway', sans-serif;
+// $heading-font:          'Oswald', sans-serif;
+// $heading-font-light:    'Oswald', sans-serif;
+$heading-font:          "Rubik Medium";
+$heading-font-light:    "Rubik Regular";
+// $heading-font:          'Commissioner', sans-serif;
+// $heading-font-light:    'Commissioner', sans-serif;
+// $heading-font:          'Montserrat', sans-serif;
+// $heading-font-light:    'Montserrat', sans-serif;
 
 $body-font-color     : $secondary;
 
@@ -342,7 +407,7 @@ $font-size-h6:      modular-scale(-1) !default; // ~1.2rem 19px
 %hx {
     font: {
         family: $heading-font;
-        // weight: 400;
+        weight: 400;
     };
     //letter-spacing: 0.04em;
     line-height: $heading-line-height;
@@ -367,8 +432,8 @@ h1 {
     @extend %hx;
     font-size: $font-size-h1;
     color: $secondary;
-    margin: ($padding * 2) 0 0;
-    line-height: 0.5;
+    margin: ($padding * 1.3) 0 0;
+    // line-height: 0.5;
     //text-align: center;
     //transition: all .3s;
 
@@ -382,6 +447,11 @@ h2 {
     @extend %hx;
     font-size: $font-size-h2;
     color: $secondary;
+
+    @include grid-media($XSmall) {
+        font-size: calc(#{$font-size-base} + 1.3vmax);
+        // line-height: 1;
+    }
 }
 
 h3 {
@@ -424,8 +494,20 @@ ul {
 
     li {
 
+        @include grid-media($XLarge) {
+            font-size: $font-size-base;
+        }
+
         @include grid-media($Medium) {
             font-size: $font-size-base;
+        }
+
+        @include grid-media($XSmall) {
+            font-size: $font-size-large;
+        }
+
+        @include grid-media($Small) {
+            font-size: $font-size-large;
         }
     }
 }
@@ -462,7 +544,7 @@ svg {
     background-color: transparent;
     color: $secondary;
     transition: all 0.3s;
-    -webkit-appearance: none;
+    // -webkit-appearance: none;
 
     &:focus {
         background-color: $fourth;

@@ -52,7 +52,8 @@
 				i {
 					color: $primary;
 					margin-right: $padding / 3;
-					font-size: $font-size-base;
+					font-size: $font-size-base + 0.15;
+					line-height: $font-size-base + 0.4;
 				}
 
 				a {
@@ -115,7 +116,9 @@
 	&__logo {
 		width: $padding * 9.25;
 		height: $padding * 3;
-		display: block;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
 		position: relative;
 		float: left;
 		background-color: $fourth;
@@ -125,7 +128,7 @@
 
 		svg {
 			width: auto;
-			height: $padding * 3;
+			height: $padding * 2.95;
 			display: block;
 		}
 
@@ -198,7 +201,7 @@
 			}
 
 			&--black {
-				fill: $third;
+				fill: $fourth;
 			}
 		}
 
@@ -320,7 +323,7 @@
 	/* End of Header Mobile
 	-------------------------------------------------- */
 
-	@include grid-media($XSmall) {
+	@include grid-media($Small) {
 		display: none;
 		visibility: hidden;
 
