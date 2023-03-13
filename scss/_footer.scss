@@ -37,7 +37,7 @@ $footer-grid: (
 
     &__top {
         width: 100%;
-        height: $padding * 4;
+        height: calc(#{$padding} * 4);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -81,8 +81,8 @@ $footer-grid: (
             display: flex;
             flex-direction: column;
             position: relative;
-            padding: ($padding * 2) 0;
-            margin-right: $padding * 2;
+            padding: calc(#{$padding} * 2) 0;
+            margin-right: calc(#{$padding} * 2);
 
             // &:last-child {
             //     width: calc((100% / 4));
@@ -92,11 +92,11 @@ $footer-grid: (
 
         &__logo {
             width: 100%;
-            margin-bottom: $padding * 2;
+            margin-bottom: calc(#{$padding} * 2);
 
             svg {
                 width: auto;
-                height: $padding * 5;
+                height: calc(#{$padding} * 5);
                 display: block;
             }
 
@@ -123,7 +123,7 @@ $footer-grid: (
 
             i {
                 color: $third;
-                margin-right: $padding / 2;
+                margin-right: calc(#{$padding} / 2);
             }
 
             a {
@@ -136,7 +136,7 @@ $footer-grid: (
         }
 
         &__slogan {
-            height: $padding * 3;
+            height: calc(#{$padding} * 3);
             display: flex;
             align-items: center;
             font-family: $heading-font;
@@ -176,7 +176,7 @@ $footer-grid: (
 
         &__social {
             width: calc((100% / 4.4) - #{$padding});
-            padding-top: $padding * 6;
+            padding-top: calc(#{$padding} * 6);
             margin-right: 0;
             margin-left: $padding;
 
@@ -220,8 +220,8 @@ $footer-grid: (
                 width: calc(100% - (#{$padding}));
                 display: block;
                 position: relative;
-                padding: $padding / 2;
-                margin-top: $padding * 2;
+                padding: calc(#{$padding} / 2);
+                margin-top: calc(#{$padding} * 2);
                 background-color: $fourth;
 
                 img {
@@ -235,7 +235,7 @@ $footer-grid: (
                     display: block;
                     position: relative;
                     font-size: $font-size-base;
-                    margin-top: $padding / 2;
+                    margin-top: calc(#{$padding} / 2);
                     text-align: right;
                 }
             }
@@ -243,7 +243,7 @@ $footer-grid: (
 
         &__down-block {
             width: 100%;
-            height: $padding * 3;
+            height: calc(#{$padding} * 3);
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -272,7 +272,7 @@ $footer-grid: (
                 p {
                     font: {
                         //family: $font-family-base;
-                        size: $font-size-small - 0.2;
+                        size: calc(#{$font-size-small} - 0.2rem);
                     };
                     line-height: 1.2;
                     color: $fourth;
@@ -290,7 +290,7 @@ $footer-grid: (
 
                     svg {
                         width: auto;
-                        height: $padding * 1.3;
+                        height: calc(#{$padding} * 1.3);
                         display: block;
                         stroke-width: 0;
                         transition: all 0.2s;
@@ -352,13 +352,20 @@ $footer-grid: (
             //     }
             // }
         }
+
+        &__banner {
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: calc((#{$padding} * 3) + 3rem);
+        }
     }
 
     @include grid-media($XSmall) {
 
         &-wrapper {
             width: calc(100% - (#{$padding} * 2));
-            padding: $padding $padding ($headerMobileTopHeight + $padding) $padding;
+            padding: $padding $padding calc(#{$headerMobileTopHeight} + #{$padding}) $padding;
         }
 
         &__top {
@@ -438,6 +445,19 @@ $footer-grid: (
                 .author {
                     width: 100%;
                     justify-content: center;
+                }
+            }
+
+            &__banner {
+                width: 100%;
+                position: relative;
+                right: initial;
+                left: 0;
+                bottom: 0;
+                margin: 1rem 0;
+
+                video {
+                    width: 100%;
                 }
             }
         }

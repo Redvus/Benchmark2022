@@ -29,7 +29,7 @@
 				justify-content: center;
 				align-items: center;
 				font-family: $heading-font-light;
-				font-size: $font-size-large - 0.1;
+				font-size: calc(#{$font-size-large} - 0.1rem);
 				color: $fourth;
 				padding: 0 $padding;
 
@@ -43,7 +43,7 @@
 						li {
 
 							a {
-								font-size: $font-size-large - 0.2;
+								font-size: calc(#{$font-size-large} - 0.2rem);
 							}
 
 							// a.active {
@@ -98,7 +98,7 @@
 					display: block;
 					float: left;
 					position: relative;
-					margin-right: $padding / 5;
+					margin-right: calc(#{$padding} / 5);
 					// transform: translateY(100%);
 
 					#navCrossVert {
@@ -153,7 +153,7 @@
 						align-items: center;
 						justify-content: flex-end;
 						position: relative;
-						padding: ($padding / 2) $padding;
+						padding: calc(#{$padding} / 2) $padding;
 						color: $fourth;
 						text-align: right;
 						line-height: 1.2;
@@ -207,7 +207,7 @@
 	&__mobile {
 
 		li {
-			margin: ($padding / 3) 0;
+			margin: calc(#{$padding} / 3) 0;
 
 			a {
 				font-family: $heading-font;
@@ -230,7 +230,7 @@
 				}
 
 				.submenu {
-					margin-top: -($padding / 2);
+					margin-top: calc((-#{$padding}) / 2);
 
 					li {
 

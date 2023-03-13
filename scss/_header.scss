@@ -51,9 +51,9 @@
 
 				i {
 					color: $primary;
-					margin-right: $padding / 3;
-					font-size: $font-size-base + 0.15;
-					line-height: $font-size-base + 0.4;
+					margin-right: calc(#{$padding} / 3);
+					font-size: calc(#{$font-size-base} + 0.15rem);
+					line-height: calc(#{$font-size-base} + 0.4rem);
 				}
 
 				a {
@@ -91,6 +91,11 @@
 				}
 			}
 		}
+
+		&__banner {
+			height: 100%;
+			display: block;
+		}
 	}
 
 	&-bottom {
@@ -104,7 +109,7 @@
 
 	&-line {
 		width: 100%;
-		height: $headerLineHeight / 4;
+		height: calc(#{$headerLineHeight} / 4);
 		display: block;
 		position: fixed;
 		background-color: $third;
@@ -114,8 +119,8 @@
 	}
 
 	&__logo {
-		width: $padding * 9.25;
-		height: $padding * 3;
+		width: calc(#{$padding} * 9.25);
+		height: calc(#{$padding} * 3);
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
@@ -128,7 +133,7 @@
 
 		svg {
 			width: auto;
-			height: $padding * 2.95;
+			height: calc(#{$padding} * 2.95);
 			display: block;
 		}
 
@@ -143,7 +148,7 @@
 
 	&__menu {
 		width: calc(100% - (#{$padding} * 9.25) - (#{$padding} * 2));
-		height: $padding * 3;
+		height: calc(#{$padding} * 3);
 		display: flex;
 		justify-content: flex-end;
 		position: absolute;
@@ -323,6 +328,24 @@
 	/* End of Header Mobile
 	-------------------------------------------------- */
 
+	@include grid-media($Medium) {
+		&-mobile {
+			&__banner {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+
+	@include grid-media($XSmall) {
+		&-mobile {
+			&__banner {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+
 	@include grid-media($Small) {
 		display: none;
 		visibility: hidden;
@@ -354,6 +377,19 @@
 			&__phone {
 				display: flex;
 				visibility: visible;
+			}
+
+			&__banner {
+				width: 100%;
+				display: block;
+				visibility: visible;
+				position: fixed;
+				top: $headerMobileTopHeight;
+				z-index: 100;
+
+				video {
+					width: 100%;
+				}
 			}
 		}
 	}
