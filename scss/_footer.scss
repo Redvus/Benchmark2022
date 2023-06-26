@@ -358,6 +358,20 @@ $footer-grid: (
             position: absolute;
             right: 0;
             bottom: calc((#{$padding} * 3) + 3rem);
+
+            picture {
+                width: 720px;
+                height: 90px;
+                display: block;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-position: center;
+                    object-fit: cover;
+                }
+            }
         }
     }
 

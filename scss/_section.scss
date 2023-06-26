@@ -120,6 +120,7 @@
 			display: block;
 			position: relative;
 			overflow: hidden;
+			background-color: $fourth;
 			z-index: 1;
 
 			img {
@@ -473,10 +474,14 @@
 					flex-direction: row;
 					position: relative;
 					background-color: $fourth;
-					cursor: pointer;
 					transition: $base-duration;
 					color: $secondary;
 					overflow: hidden;
+					cursor: pointer;
+
+					&.nolink {
+						cursor: default;
+					}
 				}
 
 				&:nth-child(2n) {
@@ -488,6 +493,10 @@
 
 					a {
 						background-color: $cardHoverBackground;
+
+						&.nolink {
+							background-color: $fourth;
+						}
 					}
 
 					.section-news__list-arrow {
@@ -562,6 +571,10 @@
 
 				p {
 					margin: 0;
+				}
+
+				strong {
+					color: $primary;
 				}
 			}
 
@@ -2167,6 +2180,10 @@
 		@include grid-media($XSmall) {
 			margin-bottom: calc(#{$padding} * 2);
 		}
+	}
+
+	&__noindex {
+
 	}
 }
 
