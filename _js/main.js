@@ -41,7 +41,7 @@
             ease: "none"
         });
 
-        ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+        ScrollTrigger.addEventListener("refreshInit", () => locoScroll.update());
         ScrollTrigger.refresh();
     }
 
